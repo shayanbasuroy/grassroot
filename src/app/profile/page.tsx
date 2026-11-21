@@ -25,7 +25,7 @@ import { PoolRing } from "@/components/PoolRing";
 import type { ApplianceTag, DietaryTag } from "@/lib/types";
 
 const APPLIANCES: ApplianceTag[] = [
-  "Rice-Cooker",
+  "Rice Cooker",
   "Air Fryer",
   "Single Pan",
   "Full Stove",
@@ -33,7 +33,7 @@ const APPLIANCES: ApplianceTag[] = [
 
 const DIETARY_PREFS: DietaryTag[] = [
   "100% Halal",
-  "High-Protein",
+  "High Protein",
   "No Seafood",
   "No Spicy",
 ];
@@ -152,7 +152,7 @@ export default function ProfilePage() {
             </h2>
           </div>
           <p className="mt-0.5 text-xs text-[var(--ink-secondary)]">
-            Tap the appliances you own—your Home feed automatically ranks
+            Tap the appliances you own and your Home feed automatically ranks
             compatible recipes first.
           </p>
 
@@ -304,7 +304,7 @@ export default function ProfilePage() {
                     Admin Procurement Exporter
                   </div>
                   <div className="truncate text-xs text-[var(--ink-secondary)]">
-                    Raw-weight CSV PO · Packing Labels · Unit Economics
+                    Raw weight CSV PO · Packing Labels · Unit Economics
                   </div>
                 </div>
               </div>

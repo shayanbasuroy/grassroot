@@ -1,7 +1,7 @@
-export type ApplianceTag = "Rice-Cooker" | "Air Fryer" | "Single Pan" | "Full Stove";
-export type GoalTag = "Rice-Cooker" | "15-Min" | "Healthy";
-export type CuisineTag = "Malay" | "Japanese" | "Chinese-Halal" | "Western";
-export type DietaryTag = "100% Halal" | "High-Protein" | "No Seafood" | "No Spicy";
+export type ApplianceTag = "Rice Cooker" | "Air Fryer" | "Single Pan" | "Full Stove";
+export type GoalTag = "Rice Cooker" | "15 Min" | "Healthy";
+export type CuisineTag = "Malay" | "Japanese" | "Chinese Halal" | "Western";
+export type DietaryTag = "100% Halal" | "High Protein" | "No Seafood" | "No Spicy";
 export type PlanTier = "student" | "pro" | "couple" | "family";
 export type DropStatus = "open" | "cutoff_locked" | "dispatched" | "completed";
 export type PaymentMethod = "billplz_fpx" | "duitnow_qr";

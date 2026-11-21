@@ -157,7 +157,7 @@ export function computeMealKitAnalytics(params: {
       if (!addon) continue;
       addPoQty({
         sku_id: addon.sku_id,
-        ingredient_name: `${addon.name} (Add-On)`,
+        ingredient_name: `${addon.name} (Extra)`,
         supplier_name: addon.supplier_name,
         raw_qty: addon.po_qty_per_unit * addonOrder.qty,
         raw_unit: addon.raw_unit_for_po,

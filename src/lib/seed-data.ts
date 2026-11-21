@@ -46,7 +46,7 @@ export const PLAN_SPECS: PlanSpec[] = [
   {
     tier: "student",
     name: "Student Starter",
-    persona_label: "Solo / Rice-Cooker",
+    persona_label: "Solo / Rice Cooker",
     meals: 3,
     breakdown_label: "3 dinners × 1 pax",
     price_rm: 39,
@@ -65,7 +65,7 @@ export const PLAN_SPECS: PlanSpec[] = [
   {
     tier: "couple",
     name: "Couple Box",
-    persona_label: "2-Pax Weekdays",
+    persona_label: "2 Pax Weekdays",
     meals: 8,
     breakdown_label: "4 dinners × 2 pax",
     price_rm: 92,
@@ -87,13 +87,13 @@ export const SEED_RECIPES: Recipe[] = [
     {
       id: "rec-teriyaki-01",
       slug: "teriyaki-01",
-      title: "One-Pot Rice Cooker Teriyaki Chicken",
+      title: "One Pot Rice Cooker Teriyaki Chicken",
       subtitle:
-        "Dump-and-press jasmine rice with caramelized Halal chicken breast & bok choy.",
-      appliance_tag: "Rice-Cooker",
-      goal_tags: ["Rice-Cooker", "Healthy"],
+        "Add jasmine rice, Halal chicken breast, and bok choy, then press Cook.",
+      appliance_tag: "Rice Cooker",
+      goal_tags: ["Rice Cooker", "Healthy"],
       cuisine_tag: "Japanese",
-      dietary_tags: ["100% Halal", "High-Protein", "No Seafood", "No Spicy"],
+      dietary_tags: ["100% Halal", "High Protein", "No Seafood", "No Spicy"],
       difficulty: "Zero Skill",
       prep_mins: 3,
       cook_mins: 18,
@@ -162,7 +162,7 @@ export const SEED_RECIPES: Recipe[] = [
           step_number: 1,
           title: "Rinse & Level Rice",
           instruction:
-            "Pour the pre-measured Jasmine rice into your rice cooker inner pot. Rinse once, drain, and add water up to the 1.2× rice line.",
+            "Pour the measured Jasmine rice into your rice cooker inner pot. Rinse once, drain, and add water up to the 1.2× rice line.",
           timer_seconds: null,
           tip: "Use your knuckle: water just above the first finger joint above rice level.",
         },
@@ -170,15 +170,15 @@ export const SEED_RECIPES: Recipe[] = [
           step_number: 2,
           title: "Add Chicken & Teriyaki Pouch",
           instruction:
-            "Spread the Halal diced chicken evenly over the rice and pour in 1 packet of Teriyaki Glaze. Do not stir yet—just press Cook.",
+            "Spread the Halal diced chicken evenly over the rice and pour in 1 packet of Teriyaki Glaze. Do not stir yet, just press Cook.",
           timer_seconds: 1080,
-          tip: "18 minutes matches a standard 1-cup to 2-cup rice cooker cycle.",
+          tip: "18 minutes matches a standard 1 to 2 cup rice cooker cycle.",
         },
         {
           step_number: 3,
           title: "Steam Baby Bok Choy",
           instruction:
-            "When the rice cooker switches to Warm, open the lid, lay the washed baby bok choy on top, and close the lid to residual-steam.",
+            "When the rice cooker switches to Warm, open the lid, lay the washed baby bok choy on top, and close the lid to gently steam for 3 minutes.",
           timer_seconds: 180,
         },
         {
@@ -201,13 +201,13 @@ export const SEED_RECIPES: Recipe[] = [
     {
       id: "rec-creamy-sambal",
       slug: "creamy-butter-sambal-chicken",
-      title: "15-Min Creamy Butter Sambal Chicken",
+      title: "15 Min Creamy Butter Sambal Chicken",
       subtitle:
         "Velvety Malaysian buttermilk sambal glaze with fragrant curry leaves over jasmine rice.",
       appliance_tag: "Single Pan",
-      goal_tags: ["15-Min"],
+      goal_tags: ["15 Min"],
       cuisine_tag: "Malay",
-      dietary_tags: ["100% Halal", "High-Protein", "No Seafood"],
+      dietary_tags: ["100% Halal", "High Protein", "No Seafood"],
       difficulty: "Zero Skill",
       prep_mins: 2,
       cook_mins: 13,
@@ -217,7 +217,7 @@ export const SEED_RECIPES: Recipe[] = [
       cogs_per_meal_rm: 7.0,
       price_per_meal_rm: 11.8,
       hero_image_url: "/images/recipes/creamy-sambal-chicken.jpg",
-      fmcg_sponsor_note: "Includes complimentary Ayam Brand Coconut Cream Mini-Pack",
+      fmcg_sponsor_note: "Includes complimentary Ayam Brand Coconut Cream Mini Pack",
       votes_count: 168,
       ingredients: [
         {
@@ -276,7 +276,7 @@ export const SEED_RECIPES: Recipe[] = [
           step_number: 1,
           title: "Sear Chicken in Single Pan",
           instruction:
-            "Heat 1 tbsp oil on medium-high. Toss in the diced Halal chicken and sear undisturbed until golden on the edges.",
+            "Heat 1 tbsp oil on medium high. Toss in the diced Halal chicken and sear undisturbed until golden on the edges.",
           timer_seconds: 240,
         },
         {
@@ -306,13 +306,13 @@ export const SEED_RECIPES: Recipe[] = [
     {
       id: "rec-black-pepper",
       slug: "high-protein-black-pepper-bowl",
-      title: "High-Protein Black Pepper Chicken & Broccoli",
+      title: "High Protein Black Pepper Chicken & Broccoli",
       subtitle:
-        "42g protein wok-style crushed Sarawak black pepper chicken with crisp broccoli florets.",
+        "42g protein wok style crushed Sarawak black pepper chicken with crisp broccoli florets.",
       appliance_tag: "Single Pan",
-      goal_tags: ["Healthy", "15-Min"],
-      cuisine_tag: "Chinese-Halal",
-      dietary_tags: ["100% Halal", "High-Protein", "No Seafood"],
+      goal_tags: ["Healthy", "15 Min"],
+      cuisine_tag: "Chinese Halal",
+      dietary_tags: ["100% Halal", "High Protein", "No Seafood"],
       difficulty: "Zero Skill",
       prep_mins: 3,
       cook_mins: 11,
@@ -369,16 +369,16 @@ export const SEED_RECIPES: Recipe[] = [
       steps: [
         {
           step_number: 1,
-          title: "Flash-Steam Broccoli",
+          title: "Quick Steam Broccoli",
           instruction:
             "Add broccoli florets and 3 tbsp water to your pan, cover with a lid on high heat so they turn bright emerald green.",
           timer_seconds: 120,
         },
         {
           step_number: 2,
-          title: "High-Heat Chicken Sear",
+          title: "Hot Pan Chicken Sear",
           instruction:
-            "Push broccoli aside, add 1 tsp oil and sear the 200g high-protein chicken breast cubes without crowding.",
+            "Push broccoli aside, add 1 tsp oil and sear the 200g lean chicken breast cubes without crowding.",
           timer_seconds: 240,
         },
         {
@@ -392,7 +392,7 @@ export const SEED_RECIPES: Recipe[] = [
           step_number: 4,
           title: "Bowl & Serve",
           instruction:
-            "Serve over warm rice for a macro-friendly 42g protein weeknight bowl.",
+            "Serve over warm rice for a balanced 42g protein weeknight bowl.",
           timer_seconds: null,
         },
       ],
@@ -400,13 +400,13 @@ export const SEED_RECIPES: Recipe[] = [
     {
       id: "rec-lemon-herb",
       slug: "airfryer-lemon-herb-chicken",
-      title: "Air-Fryer Lemon Garlic Herb Chicken & Potatoes",
+      title: "Air Fryer Lemon Garlic Herb Chicken & Potatoes",
       subtitle:
-        "Hands-off golden herb-roasted chicken thighs and blistered baby potatoes in 16 minutes.",
+        "Easy golden herb roasted chicken thighs and blistered baby potatoes in 16 minutes.",
       appliance_tag: "Air Fryer",
       goal_tags: ["Healthy"],
       cuisine_tag: "Western",
-      dietary_tags: ["100% Halal", "High-Protein", "No Seafood", "No Spicy"],
+      dietary_tags: ["100% Halal", "High Protein", "No Seafood", "No Spicy"],
       difficulty: "Zero Skill",
       prep_mins: 2,
       cook_mins: 16,
@@ -455,12 +455,12 @@ export const SEED_RECIPES: Recipe[] = [
           step_number: 1,
           title: "Coat & Load Basket",
           instruction:
-            "Toss the halved baby potatoes and boneless chicken thighs with the Lemon Garlic Herb marinade pouch directly inside the air-fryer basket.",
+            "Toss the halved baby potatoes and boneless chicken thighs with the Lemon Garlic Herb marinade pouch directly inside the air fryer basket.",
           timer_seconds: null,
         },
         {
           step_number: 2,
-          title: "Air-Fry First Half",
+          title: "Air Fry First Half",
           instruction:
             "Set Air Fryer to 190°C and cook for 8 minutes while you relax.",
           timer_seconds: 480,
@@ -469,7 +469,7 @@ export const SEED_RECIPES: Recipe[] = [
           step_number: 3,
           title: "Shake & Finish Crisp",
           instruction:
-            "Give the basket one quick shake, flip the chicken skin-side up, and air-fry another 8 minutes until golden & blistered.",
+            "Give the basket one quick shake, flip the chicken skin side up, and air fry another 8 minutes until golden and blistered.",
           timer_seconds: 480,
         },
         {
@@ -484,13 +484,13 @@ export const SEED_RECIPES: Recipe[] = [
     {
       id: "rec-hainanese-rice-cooker",
       slug: "hainanese-chicken-rice-cooker",
-      title: "One-Pot Hainanese Chicken Rice",
+      title: "One Pot Hainanese Chicken Rice",
       subtitle:
-        "Fragrant pandan-ginger rice and silky poached chicken made completely in your rice cooker.",
-      appliance_tag: "Rice-Cooker",
-      goal_tags: ["Rice-Cooker"],
-      cuisine_tag: "Chinese-Halal",
-      dietary_tags: ["100% Halal", "High-Protein", "No Seafood", "No Spicy"],
+        "Fragrant pandan and ginger rice and silky poached chicken made completely in your rice cooker.",
+      appliance_tag: "Rice Cooker",
+      goal_tags: ["Rice Cooker"],
+      cuisine_tag: "Chinese Halal",
+      dietary_tags: ["100% Halal", "High Protein", "No Seafood", "No Spicy"],
       difficulty: "Zero Skill",
       prep_mins: 5,
       cook_mins: 22,
@@ -546,14 +546,14 @@ export const SEED_RECIPES: Recipe[] = [
           step_number: 2,
           title: "Lay Chicken & Press Cook",
           instruction:
-            "Place chicken thigh skin-side up right on top of the rice and press Cook.",
+            "Place chicken thigh skin side up right on top of the rice and press Cook.",
           timer_seconds: 1320,
         },
         {
           step_number: 3,
           title: "Rest & Slice",
           instruction:
-            "Keep lid closed 3 minutes on Warm, then slice chicken and spoon ginger-scallion oil on top.",
+            "Keep lid closed 3 minutes on Warm, then slice chicken and spoon ginger scallion oil on top.",
           timer_seconds: 180,
         },
       ],
@@ -561,13 +561,13 @@ export const SEED_RECIPES: Recipe[] = [
     {
       id: "rec-gyudon-15min",
       slug: "halal-beef-gyudon-15min",
-      title: "15-Min Halal Beef Gyudon & Onsen Egg",
+      title: "15 Min Halal Beef Gyudon & Onsen Egg",
       subtitle:
-        "Sweet-savory shaved beef brisket and caramelized onions over rice with a jammy egg.",
+        "Sweet and savory shaved beef brisket and caramelized onions over rice with a jammy egg.",
       appliance_tag: "Single Pan",
-      goal_tags: ["15-Min"],
+      goal_tags: ["15 Min"],
       cuisine_tag: "Japanese",
-      dietary_tags: ["100% Halal", "High-Protein", "No Seafood", "No Spicy"],
+      dietary_tags: ["100% Halal", "High Protein", "No Seafood", "No Spicy"],
       difficulty: "Beginner",
       prep_mins: 4,
       cook_mins: 11,
@@ -616,14 +616,14 @@ export const SEED_RECIPES: Recipe[] = [
           step_number: 1,
           title: "Simmer Onions in Sweet Soy Dashi",
           instruction:
-            "Simmer sliced onions with halal dashi-soy broth in your pan until translucent and sweet.",
+            "Simmer sliced onions with halal dashi soy broth in your pan until translucent and sweet.",
           timer_seconds: 240,
         },
         {
           step_number: 2,
-          title: "Quick-Poach Shaved Beef",
+          title: "Quick Poach Shaved Beef",
           instruction:
-            "Drop in the thin beef slices and stir gently until just cooked through—do not overcook.",
+            "Drop in the thin beef slices and stir gently until just cooked through, do not overcook.",
           timer_seconds: 150,
         },
         {
@@ -638,13 +638,13 @@ export const SEED_RECIPES: Recipe[] = [
     {
       id: "rec-ayam-masak-kicap",
       slug: "zero-skill-ayam-masak-kicap",
-      title: "Zero-Skill Ayam Masak Kicap Pedas",
+      title: "Easy Ayam Masak Kicap Pedas",
       subtitle:
-        "Malaysian comfort classic—sweet dark soy braised chicken with fried potatoes and chili.",
+        "Malaysian comfort classic with sweet dark soy braised chicken, fried potatoes, and chili.",
       appliance_tag: "Single Pan",
-      goal_tags: ["15-Min"],
+      goal_tags: ["15 Min"],
       cuisine_tag: "Malay",
-      dietary_tags: ["100% Halal", "High-Protein", "No Seafood"],
+      dietary_tags: ["100% Halal", "High Protein", "No Seafood"],
       difficulty: "Zero Skill",
       prep_mins: 4,
       cook_mins: 14,
@@ -691,9 +691,9 @@ export const SEED_RECIPES: Recipe[] = [
       steps: [
         {
           step_number: 1,
-          title: "Pan-Sear Chicken & Potatoes",
+          title: "Pan Sear Chicken & Potatoes",
           instruction:
-            "Sauté chicken and potato cubes on medium-high until golden outside.",
+            "Sauté chicken and potato cubes on medium high until golden outside.",
           timer_seconds: 300,
         },
         {
@@ -708,13 +708,13 @@ export const SEED_RECIPES: Recipe[] = [
     {
       id: "rec-miso-honey-salmon",
       slug: "airfryer-miso-honey-salmon",
-      title: "Air-Fryer Miso Honey Salmon & Edamame",
+      title: "Air Fryer Miso Honey Salmon & Edamame",
       subtitle:
-        "Omega-rich caramelized salmon fillet and sweet edamame ready in 10 minutes flat.",
+        "Rich caramelized salmon fillet and sweet edamame ready in 10 minutes flat.",
       appliance_tag: "Air Fryer",
-      goal_tags: ["Healthy", "15-Min"],
+      goal_tags: ["Healthy", "15 Min"],
       cuisine_tag: "Japanese",
-      dietary_tags: ["100% Halal", "High-Protein", "No Spicy"],
+      dietary_tags: ["100% Halal", "High Protein", "No Spicy"],
       difficulty: "Zero Skill",
       prep_mins: 2,
       cook_mins: 10,
@@ -763,14 +763,14 @@ export const SEED_RECIPES: Recipe[] = [
           step_number: 1,
           title: "Brush Miso Honey Glaze",
           instruction:
-            "Line air fryer with parchment, place salmon skin-side down, and brush generously with miso honey glaze.",
+            "Line air fryer with parchment, place salmon skin side down, and brush generously with miso honey glaze.",
           timer_seconds: null,
         },
         {
           step_number: 2,
-          title: "Air-Fry 10 Minutes",
+          title: "Air Fry 10 Minutes",
           instruction:
-            "Air-fry at 195°C for 10 minutes until edges caramelize and center stays flaky.",
+            "Air fry at 195°C for 10 minutes until edges caramelize and center stays flaky.",
           timer_seconds: 600,
         },
       ],
@@ -830,7 +830,7 @@ export function createSeedData(): LocalMealKitDb {
       condo_id: "condo-geo",
       drop_date: dropDate,
       cutoff_at: cutoffIso,
-      pickup_window: "Sun 6:00 PM – 6:45 PM",
+      pickup_window: "Sun 6:00 PM to 6:45 PM",
       target_boxes: 30,
       base_joined_boxes: 24,
       van_cost_rm: 90,
@@ -842,7 +842,7 @@ export function createSeedData(): LocalMealKitDb {
       condo_id: "condo-dlatour",
       drop_date: dropDate,
       cutoff_at: cutoffIso,
-      pickup_window: "Sun 6:30 PM – 7:15 PM",
+      pickup_window: "Sun 6:30 PM to 7:15 PM",
       target_boxes: 30,
       base_joined_boxes: 18,
       van_cost_rm: 90,
@@ -854,7 +854,7 @@ export function createSeedData(): LocalMealKitDb {
       condo_id: "condo-ridzuan",
       drop_date: dropDate,
       cutoff_at: cutoffIso,
-      pickup_window: "Sun 7:00 PM – 7:45 PM",
+      pickup_window: "Sun 7:00 PM to 7:45 PM",
       target_boxes: 30,
       base_joined_boxes: 29,
       van_cost_rm: 90,
@@ -866,7 +866,7 @@ export function createSeedData(): LocalMealKitDb {
       condo_id: "condo-amarine",
       drop_date: dropDate,
       cutoff_at: cutoffIso,
-      pickup_window: "Sun 6:00 PM – 6:45 PM",
+      pickup_window: "Sun 6:00 PM to 6:45 PM",
       target_boxes: 30,
       base_joined_boxes: 11,
       van_cost_rm: 90,
@@ -881,7 +881,7 @@ export function createSeedData(): LocalMealKitDb {
     {
       id: "addon-chicken-500g",
       name: "Extra 500g Halal Diced Chicken Breast",
-      subtitle: "Vacuum-chilled lean protein top-up",
+      subtitle: "Freshly chilled lean protein pack",
       price_rm: 12.0,
       retail_rm: 15.5,
       weight_label: "500g pack",
@@ -905,7 +905,7 @@ export function createSeedData(): LocalMealKitDb {
     {
       id: "addon-eggs-30s",
       name: "30s Grade A Egg Tray",
-      subtitle: "Farm-direct Sepang chilled van",
+      subtitle: "Direct from Sepang farm",
       price_rm: 13.99,
       retail_rm: 16.5,
       weight_label: "30 eggs",

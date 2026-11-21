@@ -26,7 +26,7 @@ const PRESET_TIMERS = [
     subtitle: "Jasmine rice + teriyaki chicken",
   },
   {
-    title: "Air-Fryer Crisp",
+    title: "Air Fryer Crisp",
     slug: "airfryer-lemon-herb-chicken",
     seconds: 480,
     subtitle: "190°C golden thigh & potatoes",
@@ -93,7 +93,7 @@ export default function TimersAndSavedPage() {
                 href={`/cook/${activeTimer.slug}`}
                 className="glass-btn-emerald rounded-full px-3.5 py-1.5 text-xs font-semibold text-white"
               >
-                Resume Cook-Along
+                Resume Cook Along
               </Link>
             )}
           </div>
@@ -162,7 +162,7 @@ export default function TimersAndSavedPage() {
                 className="mt-2 text-xs text-[var(--ink-secondary)]"
               >
                 Start a preset timer below or tap any highlighted duration inside
-                Cook-Along Mode to pin it to your floating Live Activity pill.
+                Cook Along Mode to pin it to your floating Live Activity pill.
               </motion.p>
             )}
           </AnimatePresence>

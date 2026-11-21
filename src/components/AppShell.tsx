@@ -408,7 +408,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             </div>
 
             <p className="mt-2 text-xs text-[var(--ink-secondary)]">
-              All neighbours in your condo share one Sunday van — so delivery is RM 0.
+              All neighbours in your condo share one Sunday van, so delivery is RM 0.
             </p>
 
             <div className="mt-4 space-y-2.5">

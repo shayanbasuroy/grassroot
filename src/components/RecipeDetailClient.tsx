@@ -299,7 +299,7 @@ export function RecipeDetailClient({
                   className="glass-photo-pill inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-semibold text-white transition hover:brightness-110"
                 >
                   <QrCode className="h-3.5 w-3.5" strokeWidth={1.75} />
-                  Hands-free mode
+                  Hands free mode
                 </Link>
               </div>
 

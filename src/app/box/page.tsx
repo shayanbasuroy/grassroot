@@ -29,7 +29,7 @@ import { closeTopLayer } from "@/lib/top-layer";
 import type { BoxOrder, PaymentMethod } from "@/lib/types";
 
 function useCutoffCountdown(cutoffIso?: string) {
-  const [label, setLabel] = useState("—");
+  const [label, setLabel] = useState("...");
   useEffect(() => {
     if (!cutoffIso) return;
     const update = () => {
@@ -278,7 +278,7 @@ export default function MyBoxPage() {
             ? patch.paused
               ? "Box paused for this week"
               : "Box resumed for Sunday drop"
-            : "Auto-renewal preference updated"
+            : "Auto renewal preference updated"
         );
       }
     } finally {
@@ -425,8 +425,8 @@ export default function MyBoxPage() {
                   >
                     <RefreshCw className="h-3.5 w-3.5" />
                     {pickupPassOrder.auto_renew
-                      ? "Weekly Auto-Renew On"
-                      : "One-Off Box"}
+                      ? "Weekly Auto Renew On"
+                      : "One Time Box"}
                   </button>
                   <button
                     type="button"
@@ -581,7 +581,7 @@ export default function MyBoxPage() {
                       onClick={autoFillBox}
                       className="glass-tile rounded-full px-3 py-1.5 text-xs font-semibold text-[var(--ink-primary)] hover:brightness-110"
                     >
-                      Auto-Fill
+                      Auto Fill
                     </button>
                   </div>
 
@@ -873,7 +873,7 @@ export default function MyBoxPage() {
                     </div>
                   </div>
 
-                  {/* 1-Tap Weekly Auto-Renew */}
+                  {/* Weekly Auto Renew */}
                   <button
                     type="button"
                     onClick={() => setAutoRenew((v) => !v)}
@@ -881,7 +881,7 @@ export default function MyBoxPage() {
                   >
                     <div>
                       <div className="text-xs font-semibold text-[var(--ink-primary)]">
-                        Weekly Auto-Renew
+                        Weekly Auto Renew
                       </div>
                       <div className="text-[11px] text-[var(--ink-secondary)]">
                         Pause or skip anytime up to 48h before cutoff
@@ -914,7 +914,7 @@ export default function MyBoxPage() {
                     </div>
                     {addonsSubtotal > 0 && (
                       <div className="flex justify-between text-[var(--ink-secondary)]">
-                        <span>Zero-Delivery Add-Ons</span>
+                        <span>Free Delivery Extras</span>
                         <span className="font-medium text-[var(--ink-primary)] tabular-nums">
                           RM {addonsSubtotal.toFixed(2)}
                         </span>
@@ -986,7 +986,7 @@ export default function MyBoxPage() {
           </div>
 
           <p className="mt-1.5 text-xs text-[var(--ink-secondary)]">
-            {selectedPool?.condo.name} · Unit {unitNo || "—"}
+            {selectedPool?.condo.name} · Unit {unitNo || "N/A"}
           </p>
 
           <div className="glass-tile mt-4 flex flex-col items-center rounded-2xl p-5">

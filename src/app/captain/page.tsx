@@ -207,7 +207,7 @@ export default function BuildingCaptainPage() {
       <section className="mt-5 space-y-2.5">
         {condoOrders.length === 0 ? (
           <div className="glass-panel rounded-[24px] p-8 text-center text-xs text-[var(--ink-secondary)]">
-            No checked-out boxes for {selectedPool?.condo.name} yet.
+            No confirmed boxes for {selectedPool?.condo.name} yet.
           </div>
         ) : (
           condoOrders.map((order, idx) => {

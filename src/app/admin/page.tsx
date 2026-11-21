@@ -73,19 +73,19 @@ export default function AdminProcurementPage() {
     a.download = `grassroot-supplier-po-${new Date().toISOString().slice(0, 10)}.csv`;
     a.click();
     URL.revokeObjectURL(url);
-    showToast("Downloaded raw-weight Supplier PO CSV");
+    showToast("Downloaded raw weight Supplier PO CSV");
   }
 
   function handleCopyPo() {
     const lines = [
-      "GRASSROOT WEEKLY PO — FRIDAY 8:00 PM CUTOFF",
+      "GRASSROOT WEEKLY PO | FRIDAY 8:00 PM CUTOFF",
       `Active Boxes: ${econ?.total_active_boxes || 0} | Total Meals: ${
         econ?.total_meals || 0
       }`,
       "--------------------------------------------",
       ...poLines.map(
         (l) =>
-          `• ${l.raw_qty.toFixed(1)} ${l.raw_unit} — ${l.ingredient_name} (${
+          `• ${l.raw_qty.toFixed(1)} ${l.raw_unit} ${l.ingredient_name} (${
             l.supplier_name
           })`
       ),
@@ -190,10 +190,10 @@ export default function AdminProcurementPage() {
         className="no-scrollbar mt-6 flex gap-2 overflow-x-auto pb-1 print:hidden"
       >
         {[
-          { id: "po" as const, label: `Raw-Weight Supplier PO (${poLines.length})` },
+          { id: "po" as const, label: `Raw Weight Supplier PO (${poLines.length})` },
           { id: "labels" as const, label: `Halal Kitchen Labels (${labels.length})` },
           { id: "van" as const, label: `Lalamove Van Manifest (${vanRows.length})` },
-          { id: "votes" as const, label: "Next-Week Pool Votes" },
+          { id: "votes" as const, label: "Next Week Pool Votes" },
         ].map((t) => {
           const active = tab === t.id;
           return (
@@ -242,7 +242,7 @@ export default function AdminProcurementPage() {
                   Consolidated Klang Valley Supplier Purchase Order
                 </h2>
                 <p className="text-xs text-[var(--ink-secondary)]">
-                  Automatically converts all weekly boxes &amp; add-ons into raw
+                  Automatically converts all weekly boxes &amp; extras into raw
                   weights (kg / L / packs).
                 </p>
               </div>
@@ -395,7 +395,7 @@ export default function AdminProcurementPage() {
                       className="flex justify-between px-1 font-medium text-[var(--brand-orange)]"
                     >
                       <span>
-                        + Add-On: {a.qty}× {a.name}
+                        + Extra: {a.qty}× {a.name}
                       </span>
                     </li>
                   ))}

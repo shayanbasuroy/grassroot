@@ -11,9 +11,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "GrassRoot — Pooled Condo Meal Kits & Guided Cooking",
+  title: "GrassRoot | Pooled Condo Meal Kits & Guided Cooking",
   description:
-    "Unlimited free beginner recipes paired with neighborhood-batched weekly halal meal boxes across Bandar Sunway & Subang Jaya.",
+    "Unlimited free beginner recipes paired with neighborhood pooled weekly halal meal boxes across Bandar Sunway & Subang Jaya.",
 };
 
 export const viewport: Viewport = {

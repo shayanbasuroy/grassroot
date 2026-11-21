@@ -260,7 +260,7 @@ export function CookAlongClient({
             </div>
 
             <p className="mt-4 text-xs font-semibold uppercase tracking-wider text-[#82C9AF]">
-              First-Cook Complete
+              First Cook Complete
             </p>
             <h1 className="font-display mt-1 text-2xl font-bold text-white sm:text-3xl">
               Dinner is served!
@@ -309,7 +309,7 @@ export function CookAlongClient({
                   Keep on Next Week&apos;s Box
                 </div>
                 <div className="text-xs text-white/75">
-                  Auto-include if pooled again next Sunday
+                  Include automatically if pooled again next Sunday
                 </div>
               </div>
               <span

@@ -16,12 +16,12 @@ import type { Recipe } from "@/lib/types";
 
 const FILTER_PILLS = [
   "All",
-  "Rice-Cooker",
-  "15-Min",
+  "Rice Cooker",
+  "15 Min",
   "Healthy",
   "Malay",
   "Japanese",
-  "Chinese-Halal",
+  "Chinese Halal",
   "Western",
 ] as const;
 
@@ -163,7 +163,7 @@ export default function CookHomePage() {
           <span aria-hidden="true">·</span>
           <span>
             <strong className="font-semibold text-[var(--ink-primary)]">2.</strong>{" "}
-            Order pre-cut kits for Sunday (RM 0 delivery)
+            Order freshly cut kits for Sunday (RM 0 delivery)
           </span>
         </div>
       </FadeIn>
@@ -216,8 +216,8 @@ export default function CookHomePage() {
               This Week&apos;s Meal Kits
             </h2>
             <p className="mt-0.5 text-xs text-[var(--ink-secondary)]">
-              Pre-cut halal ingredients delivered to your condo Sunday 6 PM · RM
-              10.50–13/meal
+              Freshly cut halal ingredients delivered to your condo Sunday 6 PM · RM
+              10.50 to 13/meal
             </p>
           </div>
 

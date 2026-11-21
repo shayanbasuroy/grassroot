@@ -122,7 +122,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   const [selectedCondoId, setSelectedCondoIdState] = useState("condo-geo");
   const [condoPickerOpen, setCondoPickerOpen] = useState(false);
   const [appliances, setAppliances] = useState<ApplianceTag[]>([
-    "Rice-Cooker",
+    "Rice Cooker",
     "Air Fryer",
     "Single Pan",
   ]);
@@ -167,9 +167,19 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
         const savedCondo = localStorage.getItem("gr_condo_id");
         if (savedCondo) setSelectedCondoIdState(savedCondo);
         const savedApp = localStorage.getItem("gr_appliances");
-        if (savedApp) setAppliances(JSON.parse(savedApp));
+        if (savedApp) {
+          const parsedApp = (JSON.parse(savedApp) as string[]).map((t) =>
+            t === "Rice-Cooker" ? "Rice Cooker" : t
+          ) as ApplianceTag[];
+          setAppliances(parsedApp);
+        }
         const savedDiet = localStorage.getItem("gr_dietary");
-        if (savedDiet) setDietary(JSON.parse(savedDiet));
+        if (savedDiet) {
+          const parsedDiet = (JSON.parse(savedDiet) as string[]).map((t) =>
+            t === "High-Protein" ? "High Protein" : t
+          ) as DietaryTag[];
+          setDietary(parsedDiet);
+        }
         const savedFav = localStorage.getItem("gr_saved_recipes");
         if (savedFav) setSavedRecipeIds(JSON.parse(savedFav));
         const savedVotes = localStorage.getItem("gr_voted_recipes");
@@ -352,7 +362,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
         );
         const cur = prev.portionsByRecipe[recipeId] || 0;
         if (delta > 0 && currentTotal >= maxMeals) {
-          showToast(`Your ${plan?.name || "box"} has ${maxMeals} meal slots — tap "-" to swap`);
+          showToast(`Your ${plan?.name || "box"} has ${maxMeals} meal slots. Tap minus to swap.`);
           return prev;
         }
         const nextVal = Math.max(0, cur + delta);
