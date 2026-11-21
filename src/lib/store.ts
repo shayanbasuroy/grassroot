@@ -1,5 +1,6 @@
 import { EventEmitter } from "node:events";
 import fs from "node:fs";
+import os from "node:os";
 import path from "node:path";
 import { computeMealKitAnalytics } from "./calculations";
 import { createSeedData, type LocalMealKitDb } from "./seed-data";
@@ -12,10 +13,12 @@ import type {
   PlanTier,
 } from "./types";
 
-const DB_FILE_PATH = path.join(process.cwd(), ".grassroot-mealkit-db.json");
+const PRIMARY_DB_PATH = path.join(process.cwd(), ".grassroot-mealkit-db.json");
+const TMP_DB_PATH = path.join(os.tmpdir(), ".grassroot-mealkit-db.json");
 
 declare global {
   var __grassrootEmitter: EventEmitter | undefined;
+  var __grassrootMemoryDb: LocalMealKitDb | undefined;
 }
 
 export function getRealtimeEmitter(): EventEmitter {
@@ -34,24 +37,59 @@ function broadcastChange(reason: string) {
 }
 
 function readLocalDb(): LocalMealKitDb {
-  try {
-    if (fs.existsSync(DB_FILE_PATH)) {
-      const raw = fs.readFileSync(DB_FILE_PATH, "utf-8");
-      const parsed = JSON.parse(raw) as LocalMealKitDb;
-      if (parsed && Array.isArray(parsed.recipes) && Array.isArray(parsed.condos)) {
-        return parsed;
+  for (const candidatePath of [PRIMARY_DB_PATH, TMP_DB_PATH]) {
+    try {
+      if (fs.existsSync(/*turbopackIgnore: true*/ candidatePath)) {
+        const raw = fs.readFileSync(
+          /*turbopackIgnore: true*/ candidatePath,
+          "utf-8"
+        );
+        const parsed = JSON.parse(raw) as LocalMealKitDb;
+        if (
+          parsed &&
+          Array.isArray(parsed.recipes) &&
+          Array.isArray(parsed.condos)
+        ) {
+          globalThis.__grassrootMemoryDb = parsed;
+          return parsed;
+        }
       }
+    } catch {
+      // Fall through to next candidate or memory fallback
     }
-  } catch {
-    // Fall through to re-seed
   }
+
+  if (globalThis.__grassrootMemoryDb) {
+    return globalThis.__grassrootMemoryDb;
+  }
+
   const seeded = createSeedData();
   writeLocalDb(seeded);
   return seeded;
 }
 
 function writeLocalDb(data: LocalMealKitDb): void {
-  fs.writeFileSync(DB_FILE_PATH, JSON.stringify(data, null, 2), "utf-8");
+  globalThis.__grassrootMemoryDb = data;
+  const serialized = JSON.stringify(data, null, 2);
+  try {
+    fs.writeFileSync(
+      /*turbopackIgnore: true*/ PRIMARY_DB_PATH,
+      serialized,
+      "utf-8"
+    );
+    return;
+  } catch {
+    // On Vercel (/var/task), process.cwd() is read-only (EROFS); fall back to os.tmpdir() (/tmp)
+  }
+  try {
+    fs.writeFileSync(
+      /*turbopackIgnore: true*/ TMP_DB_PATH,
+      serialized,
+      "utf-8"
+    );
+  } catch {
+    // Ignore if tmpdir is also unavailable; globalThis.__grassrootMemoryDb holds state in memory
+  }
 }
 
 function randomId(prefix: string): string {

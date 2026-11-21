@@ -1,5 +1,7 @@
+import { computeMealKitAnalytics } from "./calculations";
 import type {
   Addon,
+  AppStatePayload,
   BoxOrder,
   Condo,
   CookFeedback,
@@ -777,9 +779,13 @@ export const SEED_RECIPES: Recipe[] = [
     },
   ];
 
-export function createSeedData(): LocalMealKitDb {
-  const { dropDate, cutoffIso } = getNextScheduleDates();
-  const nowIso = new Date().toISOString();
+export function createSeedData(scheduleOverride?: {
+  dropDate: string;
+  cutoffIso: string;
+  nowIso: string;
+}): LocalMealKitDb {
+  const { dropDate, cutoffIso } = scheduleOverride ?? getNextScheduleDates();
+  const nowIso = scheduleOverride?.nowIso ?? new Date().toISOString();
 
   const condos: Condo[] = [
     {
@@ -1119,3 +1125,28 @@ export function createSeedData(): LocalMealKitDb {
     feedback,
   };
 }
+
+const STATIC_SEED_DB = createSeedData({
+  dropDate: "2026-11-29",
+  cutoffIso: "2026-11-27T12:00:00.000Z",
+  nowIso: "2026-11-21T12:00:00.000Z",
+});
+
+export const STATIC_INITIAL_STATE: AppStatePayload = {
+  backend_mode: "local",
+  condos: STATIC_SEED_DB.condos,
+  drops: STATIC_SEED_DB.drops,
+  recipes: STATIC_SEED_DB.recipes,
+  plans: STATIC_SEED_DB.plans,
+  addons: STATIC_SEED_DB.addons,
+  orders: STATIC_SEED_DB.orders,
+  feedback: STATIC_SEED_DB.feedback,
+  ...computeMealKitAnalytics({
+    condos: STATIC_SEED_DB.condos,
+    drops: STATIC_SEED_DB.drops,
+    recipes: STATIC_SEED_DB.recipes,
+    plans: STATIC_SEED_DB.plans,
+    addons: STATIC_SEED_DB.addons,
+    orders: STATIC_SEED_DB.orders,
+  }),
+};

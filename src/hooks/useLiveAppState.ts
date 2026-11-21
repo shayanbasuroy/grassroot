@@ -1,12 +1,13 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { STATIC_INITIAL_STATE } from "@/lib/seed-data";
 import { getSupabaseBrowserClient } from "@/lib/supabase";
 import type { AppStatePayload } from "@/lib/types";
 
 export function useLiveAppState() {
-  const [state, setState] = useState<AppStatePayload | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [state, setState] = useState<AppStatePayload>(STATIC_INITIAL_STATE);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [lastUpdated, setLastUpdated] = useState<number>(0);
 
