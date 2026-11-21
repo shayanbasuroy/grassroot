@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Local Stage 1 demo state
+.grassroot-demo-db.json
+.grassroot-mealkit-db.json
