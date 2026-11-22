@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { SEED_RECIPES } from "@/lib/seed-data";
 import { CookAlongClient } from "@/components/CookAlongClient";
+import { MobileLoadingScreen } from "@/components/MobileLoadingScreen";
 
 export function generateStaticParams() {
   return SEED_RECIPES.map((r) => ({ slug: r.slug }));
@@ -25,7 +26,7 @@ export default function CookAlongPage({
   params: Promise<{ slug: string }>;
 }) {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-[#0B0D0E]" aria-busy="true" />}>
+    <Suspense fallback={<MobileLoadingScreen mode="route" />}>
       <CookContent params={params} />
     </Suspense>
   );

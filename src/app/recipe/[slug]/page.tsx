@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { SEED_RECIPES } from "@/lib/seed-data";
+import { MobileLoadingScreen } from "@/components/MobileLoadingScreen";
 import { RecipeDetailClient } from "@/components/RecipeDetailClient";
 
 export function generateStaticParams() {
@@ -25,7 +26,7 @@ export default function RecipeDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-[#0B0D0E]" aria-busy="true" />}>
+    <Suspense fallback={<MobileLoadingScreen mode="route" />}>
       <RecipeContent params={params} />
     </Suspense>
   );

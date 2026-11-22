@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { formatCountdown, useApp } from "./AppProvider";
 import { BrandLogo } from "./BrandLogo";
+import { InitialMobileSplash } from "./MobileLoadingScreen";
 import { APPLE_SPRING, PopNumber, SMOOTH_EASE } from "./MotionPrimitives";
 import { PoolRing } from "./PoolRing";
 import { closeTopLayer } from "@/lib/top-layer";
@@ -114,6 +115,9 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="relative min-h-screen w-full overflow-x-clip text-[var(--ink-primary)]">
+      {/* Phone-Optimised Liquid Glass Launch Loading Screen */}
+      <InitialMobileSplash />
+
       {/* Ambient Atmospheric Bokeh Backdrop (skipped on full-bleed dish photo routes) */}
       {!isRecipeDetail && !isCookAlong && (
         <div aria-hidden="true" className="gr-ambient-bg print:hidden" />
