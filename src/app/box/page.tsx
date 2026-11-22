@@ -610,6 +610,17 @@ export default function MyBoxPage() {
                               <p className="text-[11px] text-[var(--ink-secondary)]">
                                 {rec.appliance_tag} · {rec.prep_mins + rec.cook_mins}m
                               </p>
+                              <div className="mt-1 flex flex-wrap items-center gap-1.5 text-[10px] font-semibold">
+                                <span className="rounded-md bg-amber-500/15 px-1.5 py-0.5 text-amber-700 dark:text-amber-300 tabular-nums">
+                                  Save {rec.time_saved_mins}m
+                                </span>
+                                <span className="rounded-md bg-emerald-500/15 px-1.5 py-0.5 text-[var(--brand-forest)] tabular-nums">
+                                  Save RM {rec.money_saved_rm.toFixed(0)} vs GrabFood
+                                </span>
+                                <span className="rounded-md bg-rose-500/15 px-1.5 py-0.5 text-rose-700 dark:text-rose-300">
+                                  {rec.health_benefit}
+                                </span>
+                              </div>
                               {rec.fmcg_sponsor_note && count > 0 && (
                                 <p className="mt-0.5 truncate text-[10px] font-medium text-[var(--brand-forest)]">
                                   Included: {rec.fmcg_sponsor_note}

@@ -107,6 +107,10 @@ export const SEED_RECIPES: Recipe[] = [
       hero_image_url: "/images/recipes/teriyaki-rice-cooker.jpg",
       fmcg_sponsor_note: "Includes complimentary Kewpie Roasted Sesame Oil Sachet",
       votes_count: 142,
+      grabfood_price_rm: 21.8,
+      money_saved_rm: 10.0,
+      time_saved_mins: 35,
+      health_benefit: "39g protein · 55% less oil",
       ingredients: [
         {
           id: "ing-101",
@@ -221,6 +225,10 @@ export const SEED_RECIPES: Recipe[] = [
       hero_image_url: "/images/recipes/creamy-sambal-chicken.jpg",
       fmcg_sponsor_note: "Includes complimentary Ayam Brand Coconut Cream Mini Pack",
       votes_count: 168,
+      grabfood_price_rm: 22.8,
+      money_saved_rm: 11.0,
+      time_saved_mins: 30,
+      health_benefit: "36g protein · Zero MSG",
       ingredients: [
         {
           id: "ing-201",
@@ -326,6 +334,10 @@ export const SEED_RECIPES: Recipe[] = [
       hero_image_url: "/images/recipes/high-protein-black-pepper.jpg",
       fmcg_sponsor_note: null,
       votes_count: 119,
+      grabfood_price_rm: 23.3,
+      money_saved_rm: 11.5,
+      time_saved_mins: 35,
+      health_benefit: "42g protein · 485 kcal",
       ingredients: [
         {
           id: "ing-301",
@@ -420,6 +432,10 @@ export const SEED_RECIPES: Recipe[] = [
       hero_image_url: "/images/recipes/lemon-herb-airfryer.jpg",
       fmcg_sponsor_note: null,
       votes_count: 98,
+      grabfood_price_rm: 24.0,
+      money_saved_rm: 12.2,
+      time_saved_mins: 32,
+      health_benefit: "Air roasted · 60% less oil",
       ingredients: [
         {
           id: "ing-401",
@@ -504,6 +520,10 @@ export const SEED_RECIPES: Recipe[] = [
       hero_image_url: "/images/recipes/hainanese-rice-cooker.jpg",
       fmcg_sponsor_note: null,
       votes_count: 84,
+      grabfood_price_rm: 19.5,
+      money_saved_rm: 8.0,
+      time_saved_mins: 28,
+      health_benefit: "35g protein · Less sodium",
       ingredients: [
         {
           id: "ing-501",
@@ -581,6 +601,10 @@ export const SEED_RECIPES: Recipe[] = [
       hero_image_url: "/images/recipes/gyudon-15min.jpg",
       fmcg_sponsor_note: null,
       votes_count: 112,
+      grabfood_price_rm: 24.5,
+      money_saved_rm: 12.0,
+      time_saved_mins: 30,
+      health_benefit: "34g protein · Fresh dashi",
       ingredients: [
         {
           id: "ing-601",
@@ -658,6 +682,10 @@ export const SEED_RECIPES: Recipe[] = [
       hero_image_url: "/images/recipes/ayam-masak-kicap.jpg",
       fmcg_sponsor_note: null,
       votes_count: 93,
+      grabfood_price_rm: 20.5,
+      money_saved_rm: 9.3,
+      time_saved_mins: 30,
+      health_benefit: "33g protein · Fresh spices",
       ingredients: [
         {
           id: "ing-701",
@@ -728,6 +756,10 @@ export const SEED_RECIPES: Recipe[] = [
       hero_image_url: "/images/recipes/miso-honey-salmon.jpg",
       fmcg_sponsor_note: null,
       votes_count: 151,
+      grabfood_price_rm: 27.5,
+      money_saved_rm: 14.0,
+      time_saved_mins: 38,
+      health_benefit: "38g protein · Rich Omega 3",
       ingredients: [
         {
           id: "ing-801",

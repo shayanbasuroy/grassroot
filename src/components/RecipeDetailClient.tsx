@@ -11,7 +11,9 @@ import {
   Clock,
   Flame,
   Heart,
+  HeartPulse,
   QrCode,
+  Wallet,
 } from "lucide-react";
 import { useApp } from "@/components/AppProvider";
 import {
@@ -177,6 +179,61 @@ export function RecipeDetailClient({
               </div>
             </StaggerItem>
           </StaggerGroup>
+
+          {/* vs. Eating Out / GrabFood Comparison Panel (Time Saved, Money Saved, Health Benefit) */}
+          <FadeIn delay={0.03}>
+            <section className="glass-photo-panel rounded-[26px] p-4 sm:p-5">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <div className="text-xs font-bold uppercase tracking-wider text-[#82C9AF]">
+                  vs. Eating Out &amp; GrabFood Delivery
+                </div>
+                <span className="rounded-full border border-white/20 bg-white/10 px-2.5 py-0.5 text-[11px] font-semibold text-white/85 tabular-nums">
+                  Outside avg: RM {(recipe.grabfood_price_rm * servings).toFixed(2)} (incl. RM 5–9 fee)
+                </span>
+              </div>
+
+              <div className="mt-3 grid grid-cols-3 gap-2.5">
+                <div className="rounded-2xl border border-white/15 bg-white/[0.08] p-3">
+                  <div className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider text-amber-300">
+                    <Clock className="h-3.5 w-3.5 shrink-0" strokeWidth={1.75} />
+                    Time Saved
+                  </div>
+                  <div className="mt-1 text-base font-bold text-white tabular-nums sm:text-lg">
+                    {recipe.time_saved_mins} mins
+                  </div>
+                  <p className="mt-0.5 text-[11px] leading-tight text-white/70">
+                    {recipe.prep_mins + recipe.cook_mins}m cook vs 45m+ wait or traffic
+                  </p>
+                </div>
+
+                <div className="rounded-2xl border border-white/15 bg-white/[0.08] p-3">
+                  <div className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider text-[#82C9AF]">
+                    <Wallet className="h-3.5 w-3.5 shrink-0" strokeWidth={1.75} />
+                    Money Saved
+                  </div>
+                  <div className="mt-1 text-base font-bold text-[#82C9AF] tabular-nums sm:text-lg">
+                    RM {(recipe.money_saved_rm * servings).toFixed(2)}
+                  </div>
+                  <p className="mt-0.5 text-[11px] leading-tight text-white/70">
+                    ~45% cheaper · RM 0 batched lobby drop
+                  </p>
+                </div>
+
+                <div className="rounded-2xl border border-white/15 bg-white/[0.08] p-3">
+                  <div className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider text-rose-300">
+                    <HeartPulse className="h-3.5 w-3.5 shrink-0" strokeWidth={1.75} />
+                    Health Benefit
+                  </div>
+                  <div className="mt-1 text-sm font-bold leading-snug text-white sm:text-base">
+                    {recipe.health_benefit}
+                  </div>
+                  <p className="mt-0.5 text-[11px] leading-tight text-white/70">
+                    Cooked fresh ({recipe.calories} kcal) · zero soggy transit
+                  </p>
+                </div>
+              </div>
+            </section>
+          </FadeIn>
 
           {/* Included Kit Sample */}
           {recipe.fmcg_sponsor_note && (

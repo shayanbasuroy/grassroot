@@ -50,6 +50,25 @@ function readLocalDb(): LocalMealKitDb {
           Array.isArray(parsed.recipes) &&
           Array.isArray(parsed.condos)
         ) {
+          const seedMap = new Map(
+            createSeedData().recipes.map((r) => [r.id, r])
+          );
+          parsed.recipes = parsed.recipes.map((r) => {
+            const seedRec = seedMap.get(r.id);
+            return {
+              ...r,
+              grabfood_price_rm:
+                r.grabfood_price_rm ?? seedRec?.grabfood_price_rm ?? 22.0,
+              money_saved_rm:
+                r.money_saved_rm ?? seedRec?.money_saved_rm ?? 10.0,
+              time_saved_mins:
+                r.time_saved_mins ?? seedRec?.time_saved_mins ?? 32,
+              health_benefit:
+                r.health_benefit ??
+                seedRec?.health_benefit ??
+                `${r.protein_g}g protein · Less oil`,
+            };
+          });
           globalThis.__grassrootMemoryDb = parsed;
           return parsed;
         }
@@ -133,16 +152,32 @@ export async function getAppState(): Promise<AppStatePayload> {
           itemsByOrder.set(it.order_id, list);
         }
 
-        const recipes = recipesRes.data.map((r) => ({
-          ...r,
-          cogs_per_meal_rm: Number(r.cogs_per_meal_rm),
-          price_per_meal_rm: Number(r.price_per_meal_rm),
-          ingredients: r.recipe_ingredients || [],
-          steps: (r.recipe_steps || []).sort(
-            (a: { step_number: number }, b: { step_number: number }) =>
-              a.step_number - b.step_number
-          ),
-        }));
+        const seedById = new Map(seed.recipes.map((sr) => [sr.id, sr]));
+        const recipes = recipesRes.data.map((r) => {
+          const seedRec = seedById.get(r.id);
+          return {
+            ...r,
+            cogs_per_meal_rm: Number(r.cogs_per_meal_rm),
+            price_per_meal_rm: Number(r.price_per_meal_rm),
+            grabfood_price_rm:
+              Number(r.grabfood_price_rm) ||
+              seedRec?.grabfood_price_rm ||
+              22.0,
+            money_saved_rm:
+              Number(r.money_saved_rm) || seedRec?.money_saved_rm || 10.0,
+            time_saved_mins:
+              Number(r.time_saved_mins) || seedRec?.time_saved_mins || 32,
+            health_benefit:
+              r.health_benefit ||
+              seedRec?.health_benefit ||
+              `${r.protein_g}g protein · Less oil`,
+            ingredients: r.recipe_ingredients || [],
+            steps: (r.recipe_steps || []).sort(
+              (a: { step_number: number }, b: { step_number: number }) =>
+                a.step_number - b.step_number
+            ),
+          };
+        });
 
         const orders: BoxOrder[] = (ordersRes.data || []).map((o) => ({
           ...o,

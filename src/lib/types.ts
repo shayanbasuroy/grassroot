@@ -70,6 +70,10 @@ export interface Recipe {
   hero_image_url: string;
   fmcg_sponsor_note: string | null;
   votes_count: number;
+  grabfood_price_rm: number;
+  money_saved_rm: number;
+  time_saved_mins: number;
+  health_benefit: string;
   ingredients: RecipeIngredient[];
   steps: RecipeStep[];
 }

@@ -3,7 +3,16 @@
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { Check, ChevronLeft, ChevronRight, Heart, Plus } from "lucide-react";
+import {
+  Check,
+  ChevronLeft,
+  ChevronRight,
+  Clock,
+  Heart,
+  HeartPulse,
+  Plus,
+  Wallet,
+} from "lucide-react";
 import { useApp } from "@/components/AppProvider";
 import {
   APPLE_SPRING,
@@ -291,7 +300,7 @@ export default function CookHomePage() {
                         alt={recipe.title}
                         className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
                       />
-                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/15" />
+                      <div className=" pointer-events-none absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-black/15" />
                     </Link>
 
                     {/* Top Row: Price Glass Pill + Add Glass Pill */}
@@ -331,18 +340,58 @@ export default function CookHomePage() {
                       </motion.button>
                     </div>
 
-                    {/* Bottom Info */}
+                    {/* Bottom Info + vs. Eating Out / GrabFood Savings Strip */}
                     <Link
                       href={`/recipe/${recipe.slug}`}
-                      className="absolute inset-x-0 bottom-0 block p-4 text-white"
+                      className="absolute inset-x-0 bottom-0 block p-3.5 text-white"
                     >
                       <div className="text-[11px] font-medium text-white/85">
                         {recipe.appliance_tag} · {recipe.prep_mins + recipe.cook_mins} min ·{" "}
                         {recipe.protein_g}g protein
                       </div>
-                      <h3 className="font-display mt-1.5 text-base font-bold leading-snug text-white sm:text-lg">
+                      <h3 className="font-display mt-1 text-base font-bold leading-snug text-white sm:text-[17px]">
                         {recipe.title}
                       </h3>
+
+                      {/* vs. Eating Out / GrabFood Comparison Strip */}
+                      <div className="mt-2.5 rounded-2xl border border-white/20 bg-black/45 p-2 backdrop-blur-md">
+                        <div className="flex items-center justify-between text-[9px] font-semibold uppercase tracking-wider text-emerald-300">
+                          <span>vs. Eating Out / GrabFood</span>
+                          <span className="text-white/65 line-through tabular-nums">
+                            RM {recipe.grabfood_price_rm.toFixed(2)}
+                          </span>
+                        </div>
+                        <div className="mt-1.5 grid grid-cols-3 gap-1 text-center">
+                          <div className="rounded-xl bg-white/10 px-1 py-1">
+                            <div className="flex items-center justify-center gap-0.5 text-[9px] font-medium text-white/70">
+                              <Clock className="h-2.5 w-2.5 text-amber-300" />
+                              <span>Time</span>
+                            </div>
+                            <div className="mt-0.5 text-[11px] font-bold text-white tabular-nums">
+                              Save {recipe.time_saved_mins}m
+                            </div>
+                          </div>
+                          <div className="rounded-xl bg-white/10 px-1 py-1">
+                            <div className="flex items-center justify-center gap-0.5 text-[9px] font-medium text-white/70">
+                              <Wallet className="h-2.5 w-2.5 text-emerald-300" />
+                              <span>Money</span>
+                            </div>
+                            <div className="mt-0.5 text-[11px] font-bold text-emerald-300 tabular-nums">
+                              Save RM {recipe.money_saved_rm.toFixed(0)}
+                            </div>
+                          </div>
+                          <div className="rounded-xl bg-white/10 px-1 py-1">
+                            <div className="flex items-center justify-center gap-0.5 text-[9px] font-medium text-white/70">
+                              <HeartPulse className="h-2.5 w-2.5 text-rose-300" />
+                              <span>Health</span>
+                            </div>
+                            <div className="mt-0.5 truncate text-[10px] font-bold text-white">
+                              {recipe.health_benefit.split(" · ")[1] ||
+                                `${recipe.protein_g}g protein`}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </Link>
                   </motion.div>
                 );
@@ -448,6 +497,46 @@ export default function CookHomePage() {
                           {recipe.title}
                         </h3>
                       </Link>
+
+                      {/* vs. Eating Out Savings Breakdown */}
+                      <div className="mt-2.5 rounded-xl border border-[var(--border-hairline)] bg-[var(--glass-subtle-bg)] p-2">
+                        <div className="flex items-center justify-between text-[9px] font-semibold uppercase tracking-wider text-[var(--brand-forest)]">
+                          <span>vs. Eating Out</span>
+                          <span className="text-[var(--ink-secondary)] line-through tabular-nums">
+                            RM {recipe.grabfood_price_rm.toFixed(0)}
+                          </span>
+                        </div>
+                        <div className="mt-1 space-y-1 text-[10px] font-medium text-[var(--ink-primary)]">
+                          <div className="flex items-center justify-between gap-1">
+                            <span className="inline-flex items-center gap-1 text-[var(--ink-secondary)]">
+                              <Clock className="h-2.5 w-2.5 shrink-0 text-[var(--brand-orange)]" />
+                              Time
+                            </span>
+                            <span className="font-bold tabular-nums">
+                              Save {recipe.time_saved_mins}m
+                            </span>
+                          </div>
+                          <div className="flex items-center justify-between gap-1">
+                            <span className="inline-flex items-center gap-1 text-[var(--ink-secondary)]">
+                              <Wallet className="h-2.5 w-2.5 shrink-0 text-[var(--brand-forest)]" />
+                              Money
+                            </span>
+                            <span className="font-bold text-[var(--brand-forest)] tabular-nums">
+                              Save RM {recipe.money_saved_rm.toFixed(2)}
+                            </span>
+                          </div>
+                          <div className="flex items-center justify-between gap-1">
+                            <span className="inline-flex items-center gap-1 text-[var(--ink-secondary)]">
+                              <HeartPulse className="h-2.5 w-2.5 shrink-0 text-rose-500" />
+                              Health
+                            </span>
+                            <span className="truncate font-semibold">
+                              {recipe.health_benefit.split(" · ")[1] ||
+                                `${recipe.protein_g}g protein`}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
